@@ -52,11 +52,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
         <title>Koszyk</title>
         <link rel="stylesheet" href="css/style.css">
         <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+        <script src="js/script.js"></script>
     </head>
     <body>
     <header>
         <img src="img/logo.png" alt="Logo">
         <h1>Nazwa</h1>
+        <div id="clock"></div>
         <nav>
             <ul>
                 <li><a href="index.php">Strona Główna</a></li>

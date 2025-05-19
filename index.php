@@ -16,19 +16,21 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
     <title>Strona Główna - Nazwa</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <header>
-        <img src="img/logo.png" alt="Logo">
-        <h1>Nazwa</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Strona Główna</a></li>
-                <li><a href="logowanie.html">Logowanie</a></li>
-                <li><a href="koszyk.php">Koszyk</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <img src="img/logo.png" alt="Logo">
+    <h1>Nazwa</h1>
+    <div id="clock"></div>
+    <nav>
+        <ul>
+            <li><a href="index.php">Strona Główna</a></li>
+            <li><a href="logowanie.html">Logowanie</a></li>
+            <li><a href="koszyk.php">Koszyk</a></li>
+        </ul>
+    </nav>
+</header>
     <main>
         <h2>Produkty</h2>
         <?php

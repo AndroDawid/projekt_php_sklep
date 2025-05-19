@@ -95,3 +95,60 @@ footer {
     color: var(--primary-color);
     width: 100%;
 }
+
+.login-panel {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-panel h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.login-panel .form-group {
+    margin-bottom: 15px;
+}
+
+.login-panel label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.login-panel input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login-panel button {
+    width: 95%;
+    padding: 10px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-panel button:hover {
+    background-color: var(--highlight-color);
+}
+
+#clock {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 10px;
+    text-align: center;
+}
