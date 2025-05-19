@@ -15,7 +15,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
     <meta charset="UTF-8">
     <title>Strona Główna - Nazwa</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/" type="image/x-icon">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
     <header>

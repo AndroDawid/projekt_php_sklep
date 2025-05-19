@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
         <meta charset="UTF-8">
         <title>Koszyk</title>
         <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" href="img/" type="image/x-icon">
+        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     </head>
     <body>
     <header>
