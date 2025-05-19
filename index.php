@@ -25,7 +25,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
             <ul>
                 <li><a href="index.php">Strona Główna</a></li>
                 <li><a href="logowanie.html">Logowanie</a></li>
-                <li><a href="koszyk.php">Kosz</a></li>
+                <li><a href="koszyk.php">Koszyk</a></li>
             </ul>
         </nav>
     </header>

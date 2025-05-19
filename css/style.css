@@ -51,6 +51,10 @@ nav ul li a {
     font-weight: bold;
 }
 
+nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
 main {
     flex: 1;
     padding: 20px;

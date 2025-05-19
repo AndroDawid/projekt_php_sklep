@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
             <ul>
                 <li><a href="index.php">Strona Główna</a></li>
                 <li><a href="logowanie.html">Logowanie</a></li>
-                <li><a href="koszyk.php">Kosz</a></li>
+                <li><a href="koszyk.php">Koszyk</a></li>
             </ul>
         </nav>
     </header>
