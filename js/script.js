@@ -1,13 +1,20 @@
 function zegarek() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const year = now.getFullYear();
+    let teraz = new Date();
+    let godziny = teraz.getHours();
+    let minuty = teraz.getMinutes();
+    let sekundy = teraz.getSeconds();
+    let dzien = teraz.getDate();
+    let miesiac = teraz.getMonth() + 1;
+    let rok = teraz.getFullYear();
 
-    document.getElementById('clock').textContent = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
+    if (godziny < 10) godziny = "0" + godziny;
+    if (minuty < 10) minuty = "0" + minuty;
+    if (sekundy < 10) sekundy = "0" + sekundy;
+    if (dzien < 10) dzien = "0" + dzien;
+    if (miesiac < 10) miesiac = "0" + miesiac;
+
+    let tekst = dzien + "-" + miesiac + "-" + rok + " " + godziny + ":" + minuty + ":" + sekundy;
+    document.getElementById("clock").textContent = tekst;
 }
 
 setInterval(zegarek, 1000);

@@ -12,7 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Dodawanie produktu do koszyka
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && !isset($_POST['remove']) && !isset($_POST['buy'])) {
     $product_id = $_POST['product_id'];
 
@@ -24,7 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && !iss
     }
 }
 
-// Usuwanie produktu z koszyka
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove'])) {
     $product_id = $_POST['product_id'];
 
@@ -35,11 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['remove'])) {
         }
     }
 
-    // Resetowanie kluczy tablicy
     $_SESSION['koszyk'] = array_values($_SESSION['koszyk']);
 }
 
-// Opróżnianie koszyka po kliknięciu "Kupuję"
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
     $_SESSION['koszyk'] = [];
 }

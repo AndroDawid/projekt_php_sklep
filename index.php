@@ -22,7 +22,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
 <header>
    <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
     <h1>Nazwa</h1>
-    <div id="clock"></div>
+    <h2><div id="clock"></div></h2>
     <nav>
         <ul>
             <li><a href="index.php">Strona Główna</a></li>
