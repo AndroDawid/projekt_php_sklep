@@ -17,5 +17,4 @@ function zegarek() {
     document.getElementById("clock").textContent = tekst;
 }
 
-setInterval(zegarek, 1000);
-zegarek();
+setInterval(zegarek, 1);

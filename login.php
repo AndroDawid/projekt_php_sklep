@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (password_verify($password, $hashed_password)) {
             $_SESSION['username'] = $username;
-            header("Location: welcome.php");
+            header("Location: index.php");
             exit();
         } else {
             echo "Nieprawidłowe hasło.";

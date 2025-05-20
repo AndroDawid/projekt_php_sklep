@@ -71,28 +71,6 @@ nav ul li a:hover {
     color: var(--highlight-color);
 }
 
-main{
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 50px repeat(2, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
-}
-
-main h2 {
-    grid-column: 1 / -1;
-    grid-row: 1/span 1;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-main form button[name="buy"] {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-top: 20px;
-}
-
 .product {
     border: 1px solid var(--primary-color);
     border-radius: 5px;

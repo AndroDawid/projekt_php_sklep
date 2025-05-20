@@ -12,14 +12,16 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id']) && !isset($_POST['remove']) && !isset($_POST['buy'])) {
-    $product_id = $_POST['product_id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
+    $product_id = intval($_POST['product_id']);
 
     $result = $conn->query("SELECT id_produktu, nazwa, cena, zdjecie FROM produkty WHERE id_produktu = $product_id");
     $product = $result->fetch_assoc();
 
     if ($product) {
         $_SESSION['koszyk'][] = $product;
+        header('Location: index.php');
+        exit;
     }
 }
 
@@ -40,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
     $_SESSION['koszyk'] = [];
 }
 ?>
-
     <!DOCTYPE html>
     <html lang="pl">
     <head>
@@ -53,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['buy'])) {
     <body>
     <header>
         <img src="img/logo.png" alt="Logo">
-        <h1>Nazwa</h1>
+        <a href="index.php"><h1>Nazwa</h1></a>
         <div id="clock"></div>
         <nav>
             <ul>

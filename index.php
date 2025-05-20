@@ -13,7 +13,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Strona Główna - Nazwa</title>
+    <title>Strona Główna - Primolek</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <script src="js/script.js"></script>
@@ -21,8 +21,8 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
 <body>
 <header>
    <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
-    <h1>Nazwa</h1>
-    <h2><div id="clock"></div></h2>
+    <a href="index.php"><h1>Primolek</h1></a>
+    <div id="clock"></div>
     <nav>
         <ul>
             <li><a href="index.php">Strona Główna</a></li>
