@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ss", $new_username, $hashed_password);
 
     if ($stmt->execute()) {
-        header("Location: index.html");
+        header("Location: index.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;

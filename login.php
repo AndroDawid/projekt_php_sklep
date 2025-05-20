@@ -34,10 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             exit();
         } else {
             echo "Nieprawidłowe hasło.";
-        }
+            echo "<br>";
+            echo '<a href="logowanie.html">Powrót do strony logowania</a>';
+}
     } else {
         echo "Nie znaleziono użytkownika.";
-    }
+        echo "<br>";
+        echo '<a href="logowanie.html">Powrót do strony logowania</a>';
+}
 
     $stmt->close();
 }
