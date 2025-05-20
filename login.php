@@ -33,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: welcome.php");
             exit();
         } else {
-            echo "❌ Nieprawidłowe hasło.";
+            echo "Nieprawidłowe hasło.";
         }
     } else {
-        echo "❌ Nie znaleziono użytkownika.";
+        echo "Nie znaleziono użytkownika.";
     }
 
     $stmt->close();

@@ -20,7 +20,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
 </head>
 <body>
 <header>
-    <img src="img/logo.png" alt="Logo">
+   <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
     <h1>Nazwa</h1>
     <div id="clock"></div>
     <nav>
