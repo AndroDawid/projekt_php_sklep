@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 session_start();
 
 $host = 'localhost';
@@ -35,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             echo "Nieprawidłowe hasło.";
             echo "<br>";
-            echo '<a href="logowanie.html">Powrót do strony logowania</a>';
+            echo '<a href="logowanie.php">Powrót do strony logowania</a>';
 }
     } else {
         echo "Nie znaleziono użytkownika.";
         echo "<br>";
-        echo '<a href="logowanie.html">Powrót do strony logowania</a>';
+        echo '<a href="logowanie.php">Powrót do strony logowania</a>';
 }
 
     $stmt->close();

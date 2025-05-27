@@ -10,7 +10,6 @@ $conn = new mysqli($host, $user, $pass, $db);
 
 $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjecie FROM `produkty`;");
 ?>
-
     <!DOCTYPE html>
     <html lang="pl">
     <head>
@@ -29,7 +28,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
             <ul>
                 <li><a href="index.php">Strona Główna</a></li>
                 <?php if (!isset($_SESSION['username'])): ?>
-                    <li><a href="logowanie.html">Logowanie</a></li>
+                    <li><a href="logowanie.php">Logowanie</a></li>
                 <?php endif; ?>
                 <li><a href="koszyk.php">Koszyk</a></li>
                 <?php if (isset($_SESSION['username'])): ?>
@@ -54,7 +53,7 @@ $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjeci
                     echo '<button type="submit">Dodaj do koszyka</button>';
                     echo '</form>';
                 } else {
-                    echo '<a href="logowanie.html"><button>Zaloguj się</button></a>';
+                    echo '<a href="logowanie.php"><button>Zaloguj się</button></a>';
                 }
                 echo '</div>';
             }

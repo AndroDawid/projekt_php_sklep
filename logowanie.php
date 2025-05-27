@@ -15,8 +15,13 @@
     <nav>
         <ul>
             <li><a href="index.php">Strona Główna</a></li>
-            <li><a href="logowanie.html">Logowanie</a></li>
+            <?php if (!isset($_SESSION['username'])): ?>
+            <li><a href="logowanie.php">Logowanie</a></li>
+            <?php endif; ?>
             <li><a href="koszyk.php">Koszyk</a></li>
+            <?php if (isset($_SESSION['username'])): ?>
+            <li><a href="logout.php">Wyloguj się</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </header>

@@ -40,67 +40,68 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        $_SESSION['koszyk'] = array_values($_SESSION['koszyk']); // Resetowanie indeksów tablicy
+        $_SESSION['koszyk'] = array_values($_SESSION['koszyk']);
     }
 
     if (isset($_POST['buy'])) {
         $_SESSION['koszyk'] = [];
     }
 }
-
-echo '
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Koszyk</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <script src="js/script.js"></script>
-</head>
-<body>
-<header>
-    <img src="img/logo.png" alt="Logo">
-    <a href="index.php"><h1>Primolek</h1></a>
-    <div id="clock"></div>
-    <nav>
-        <ul>
-            <li><a href="index.php">Strona Główna</a></li>
-            <li><a href="logowanie.html">Logowanie</a></li>
-            <li><a href="koszyk.php">Koszyk</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <h2>Koszyk</h2>';
-if (!empty($_SESSION['koszyk'])) {
-    foreach ($_SESSION['koszyk'] as $item) {
-        echo '
-        <div class="cart-item">
-            <img src="' . $item['zdjecie'] . '" alt="' . $item['nazwa'] . '" style="max-width: 100px; height: auto;">
-            <h3>' . $item['nazwa'] . '</h3>
-            <p>Cena: ' . $item['cena'] . ' zł</p>
+?>
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Koszyk</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+    <header>
+        <img src="img/logo.png" alt="Logo">
+        <a href="index.php"><h1>Primolek</h1></a>
+        <div id="clock"></div>
+        <nav>
+            <ul>
+                <li><a href="index.php">Strona Główna</a></li>
+                <?php if (!isset($_SESSION['username'])): ?>
+                    <li><a href="logowanie.php">Logowanie</a></li>
+                <?php endif; ?>
+                <li><a href="koszyk.php">Koszyk</a></li>
+                <?php if (isset($_SESSION['username'])): ?>
+                    <li><a href="logout.php">Wyloguj się</a></li>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Koszyk</h2>
+        <?php if (!empty($_SESSION['koszyk'])): ?>
+            <?php foreach ($_SESSION['koszyk'] as $item): ?>
+                <div class="cart-item">
+                    <img src="<?= htmlspecialchars($item['zdjecie']) ?>" alt="<?= htmlspecialchars($item['nazwa']) ?>" style="max-width: 100px; height: auto;">
+                    <h3><?= htmlspecialchars($item['nazwa']) ?></h3>
+                    <p>Cena: <?= htmlspecialchars($item['cena']) ?> zł</p>
+                    <form method="POST">
+                        <input type="hidden" name="product_id" value="<?= htmlspecialchars($item['id_produktu']) ?>">
+                        <button type="submit" name="remove" value="1">Usuń</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
             <form method="POST">
-                <input type="hidden" name="product_id" value="' . $item['id_produktu'] . '">
-                <button type="submit" name="remove" value="1">Usuń</button>
+                <button type="submit" name="buy" value="1">Kupuję</button>
             </form>
-        </div>';
-    }
-    echo '
-    <form method="POST">
-        <button type="submit" name="buy" value="1">Kupuję</button>
-    </form>';
-} else {
-    echo '<p>Koszyk jest pusty.</p>';
-}
-echo '
-</main>
-<footer>
-    <p>&copy; 2025 Dawid Szelągiewicz Wszelkie prawa zastrzeżone.</p>
-    <p>Ul.XYZ Miasto xx-xxx +48 000 000 000</p>
-</footer>
-</body>
-</html>';
-
+        <?php else: ?>
+            <p>Koszyk jest pusty.</p>
+        <?php endif; ?>
+    </main>
+    <footer>
+        <p>&copy; 2025 Dawid Szelągiewicz Wszelkie prawa zastrzeżone.</p>
+        <p>Ul.XYZ Miasto xx-xxx +48 000 000 000</p>
+    </footer>
+    </body>
+    </html>
+<?php
 $conn->close();
 ?>
