@@ -167,3 +167,7 @@ footer {
 .login-panel button:hover {
     background-color: var(--highlight-color);
 }
+
+.login-panel p a{
+    color: var(--primary-color);
+}

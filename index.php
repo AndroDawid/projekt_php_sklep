@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$db = 'user_db';
-$user = 'root';
-$pass = '';
-
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = mysqli_connect('localhost','root','','user_db');
 
 $zapytanie = mysqli_query($conn, "SELECT id_produktu, nazwa, cena, ilosc, zdjecie FROM `produkty`;");
 ?>

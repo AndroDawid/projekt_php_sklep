@@ -38,6 +38,7 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <button type="submit">Zaloguj</button>
+                <p><a href="reset_hasla.php">Nie pamiętasz hasła?</a></p>
             </form>
             <h2>Zarejestruj</h2>
             <form action="register.php" method="post">

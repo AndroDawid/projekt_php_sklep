@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-$host = 'localhost';
-$db = 'user_db';
-$user = 'root';
-$pass = '';
-
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = mysqli_connect('localhost','root','','user_db');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -22,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ss", $new_username, $hashed_password);
 
     if ($stmt->execute()) {
-        header("Location: index.php");
+        header("Location: logowanie.php");
         exit();
     } else {
         echo "Error: " . $stmt->error;
