@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn = mysqli_connect('localhost','root','','user_db');
 
     if ($conn->connect_error) {
-        die("Błąd połączenia z bazą danych: " . $conn->connect_error);
+        die("Błąd: " . $conn->connect_error);
     }
 
     $stmt = $conn->prepare("SELECT reset_code FROM users WHERE username = ?");
@@ -39,8 +39,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Reset hasła – kod</title>
     <link rel="stylesheet" href="css/logowanie.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
+<header>
+    <a href="index.php"><img src="img/logo.png" alt="Logo"></a>
+    <a href="index.php"><h1>Primolek</h1></a>
+    <div id="clock"></div>
+    <nav>
+        <ul>
+            <li><a href="index.php">Strona Główna</a></li>
+            <?php if (!isset($_SESSION['username'])): ?>
+                <li><a href="logowanie.php">Logowanie</a></li>
+            <?php endif; ?>
+            <li><a href="koszyk.php">Koszyk</a></li>
+            <?php if (isset($_SESSION['username'])): ?>
+                <li><a href="logout.php">Wyloguj się</a></li>
+            <?php endif; ?>
+        </ul>
+    </nav>
+</header>
 <main>
     <section class="login-panel">
         <h2>Reset hasła – krok 2</h2>
@@ -61,5 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
     </section>
 </main>
+<footer>
+    <p>&copy; 2025 Dawid Szelągiewicz Wszelkie prawa zastrzeżone.</p>
+    <p>Ul.XYZ Miasto xx-xxx +48 000 000 000</p>
+</footer>
 </body>
 </html>
